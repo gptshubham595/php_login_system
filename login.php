@@ -3,8 +3,8 @@ session_start();
 $host="localhost";
 $user="root";
 $password="";
-$db="magarun";
-$mysqli = new mysqli("localhost","root","","magarun");
+$db="magarun_admin";
+$mysqli = new mysqli("localhost","root","","magarun_admin");
 if ($mysqli -> connect_errno) {
 	echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
 	exit();
