@@ -200,7 +200,9 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                   <h5 class="f-w-600 mb-0">Elana Saint</h5><span>Web Designer</span>
                 </li>
                 <li><i data-feather="user"> </i>Profile</li>
-                <li><a href="../logout.php"><i class="feather-log-out"></i></i>Logout</a> </li>
+                <li><i data-feather="message-square"> </i>Inbox</li>
+                <li><i data-feather="file-text"> </i>Taskboard</li>
+                <li><i data-feather="settings"> </i>Settings </li>
               </ul>
             </li>
           </ul>
@@ -551,7 +553,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
           <div class="page-header">
             <div class="row">
               <div class="col-lg-6 main-header">
-                <h2>Default<span>Dashboard </span></h2>
+                <h2><span> Dashboard </span></h2>
                 <h6 class="mb-0">admin panel</h6>
               </div>
               <div class="col-lg-6 breadcrumb-right">
@@ -571,7 +573,82 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
             <div class="col-xl-8 xl-100 box-col-12">
               <div class="card">
                 <div class="card-header no-border">
-                  <h5>Recent Buyers</h5>
+                  <h5>Bot and Message Control</h5>
+                  <ul class="creative-dots">
+                    <li class="bg-primary big-dot"></li>
+                    <li class="bg-secondary semi-big-dot"></li>
+                    <li class="bg-warning medium-dot"></li>
+                    <li class="bg-info semi-medium-dot"></li>
+                    <li class="bg-secondary semi-small-dot"></li>
+                    <li class="bg-primary small-dot"></li>
+                  </ul>
+                  <div class="card-header-right">
+                    <ul class="list-unstyled card-option">
+                      <li><i class="icofont icofont-gear fa fa-spin font-primary"></i></li>
+                      <li><i class="view-html fa fa-code font-primary"></i></li>
+                      <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
+                      <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
+                      <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
+                      <li><i class="icofont icofont-error close-card font-primary"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="activity-table table-responsive recent-table">
+                  
+                    <form id="form-shower">
+                      <select id="myselect">
+                        <option value="" selected="selected"></option>
+                        <option value="connect">Register New Bot</option>
+                        <option value="chat">Send New Chat</option>
+                        <option value="dis">Disable Bot</option>
+                        <option value="del">Delete User</option>
+                      </select>
+                    </form>
+                    
+                      <form id="connect" action="" class="text-center" style="display:none">
+                        <h4>Register New Bot</h4>
+                        <input class='form-control mb-1' id="name" type="text" placeholder="Bot Name" autocomplete="" />
+                        <input class='form-control mb-1' id="min" type="text" placeholder="Minimum Amount" autocomplete="" />
+                        <input class='form-control mb-1' id="max" type="text" placeholder="Maximum Amount" autocomplete="" />
+                        <input class='form-control mb-1' id="cmax" type="text" placeholder="Minimum Payout" autocomplete="" />
+                        <input class='form-control mb-1' id="cmin" type="text" placeholder="Maximum Payout" autocomplete="" />
+                        <button class='btn btn-success'>Submit New Bot</button>
+                      </form>
+                    
+                      <form id="chat" action="" class="text-center" style="display:none">
+                        <h4>Send New Chat</h4>
+                        <input class='form-control mb-1' id="namec" type="text" placeholder="UserName" autocomplete="" />
+                        <input class='form-control mb-1' id="room" type="text" placeholder="Room Code" value="us" />
+                        <textarea class='form-control mb-1' id='message' rows='5' cols="10" placeholder="Message"></textarea>
+                        <button class='btn btn-success'>Submit New Chat</button>
+                      </form>
+                      <form id="dis" action="" class="text-center">
+                        <h4>Disable Bot</h4>
+                        <input class='form-control mb-1' id="idb" type="text" placeholder="Bot Name" value="" autocomplete="" />
+                        <button class='btn btn-success mb-4'>Disable Bot</button>
+                      </form>
+                    
+                      <form id="del" action="" class="text-center" style="display:none">
+                        <h4>Delete User</h4>
+                        <input class='form-control mb-1' id="idd" type="text" placeholder="Username" value="" autocomplete="" />
+                        <button class='btn btn-success'>Delete User</button>
+                    
+                    </form>
+
+                      </div>
+              </div>
+              <div class="card-body  justify-content-center">  
+                  <button id="bust" class="btn btn-danger justify-content-center">Force Bust Game !</button>
+                  </div>
+              </div>
+              
+            </div>
+            
+            <div class="col-xl-8 xl-100 box-col-12">
+              <div class="card">
+                <div class="card-header no-border">
+                  <h5>User Management</h5>
                   <ul class="creative-dots">
                     <li class="bg-primary big-dot"></li>
                     <li class="bg-secondary semi-big-dot"></li>
@@ -735,10 +812,11 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 </div>
               </div>
             </div>
+
           </div>
         </div>
         <!-- Container-fluid Ends-->
-        <div class="welcome-popup modal fade" id="loadModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- <div class="welcome-popup modal fade" id="loadModal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
@@ -756,7 +834,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- footer start-->
       <footer class="footer">
@@ -813,6 +891,101 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
   <script src="assets/js/theme-customizer/customizer.js"></script>
   <!-- login js-->
   <!-- Plugin used-->
+  <script>
+		$("#myselect").on("change", function () {
+			$("#" + $(this).val()).show().siblings().hide();
+			$('#form-shower').attr('style', 'display:block !important');
+		});
+	</script>
+
+<script src="./socket.io.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.3.2/sha256.min.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+	<script src="./crypt.min.js"></script>
+  
+<script>
+  $(function () {
+    var socket = io.connect('wss://mgrun.io'); //Socket Address
+    var passphrase = 'node_modules/express/index.js'; // make sure this code is in your api files.
+    var crypter = Crypt(passphrase);
+
+    const key = "secret";
+
+    setTimeout(() => {
+      socket.emit('all_withdrawals');
+    }, 2000);
+
+    socket.on('all_withdrawals', function (data) {
+      data = crypter.decrypt(data)
+      console.log(data)
+    });
+
+    socket.on('disable_bot', function (data) {
+      alert('Bot Disabled!')
+    });
+
+    $('#bust').click(function () {
+      socket.emit('force_bust');
+      alert('Game Busted!')
+    });
+
+    $('#chat').submit(function () {
+      let data = {
+        command: 'fake_chat_' + key,
+        name: $('#namec').val(),
+        room: $('#room').val(),
+        message: $('#message').val()
+      };
+      socket.emit('message', crypter.encrypt(data));
+      alert('Message Sended!')
+      return false;
+    });
+
+    $('#connect').submit(function () {
+      let data = {
+        command: 'bot_register_' + key,
+        name: $('#name').val(),
+        min: $('#min').val(),
+        max: $('#max').val(),
+        cmax: parseFloat($('#cmax').val()) * 100,
+        cmin: parseFloat($('#cmin').val()) * 100
+      };
+      socket.emit('message', crypter.encrypt(data));
+      alert('succesfully Submited !')
+      return false;
+    });
+
+    $('#dis').submit(function () {
+      let data = {
+        command: 'disable_bot_' + key,
+        id: $('#idb').val()
+      };
+      socket.emit('message', crypter.encrypt(data));
+      return false;
+    });
+
+    $('#del').submit(function () {
+      let data = {
+        command: 'delete_user_' + key,
+        id: $('#idd').val()
+      };
+      socket.emit('message', crypter.encrypt(data));
+      return false;
+    });
+  });
+
+  function createUserList(data) {
+    var i = 0;
+    for (var i in data) {
+      let user = data[i];
+      let name = user.username;
+      $('#users').append(name);
+    }
+  }
+
+</script>
+
 </body>
 
 <!-- Mirrored from admin.pixelstrap.com/poco/ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Feb 2021 15:01:21 GMT -->
