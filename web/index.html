@@ -26,13 +26,17 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
     rel="stylesheet">
   <!-- Font Awesome-->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
   <!-- ico-font-->
-  <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css"
+    integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
   <!-- Themify icon-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <!-- Flag icon-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+    integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+    crossorigin="anonymous" />
   <!-- Feather icon-->
   <link rel="stylesheet" type="text/css" href="assets/css/feather-icon.css">
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
@@ -53,12 +57,6 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
 </head>
 
 <body>
-  <!-- Loader starts-->
-  <div class="loader-wrapper">
-    <div class="typewriter">
-      <h1>New Era Admin Loading..</h1>
-    </div>
-  </div>
   <!-- Loader ends-->
   <!-- page-wrapper Start-->
   <div class="page-wrapper">
@@ -595,56 +593,72 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 </div>
                 <div class="card-body pt-0">
                   <div class="activity-table table-responsive recent-table">
-                  
+
                     <form id="form-shower">
                       <select id="myselect">
                         <option value="" selected="selected"></option>
                         <option value="connect">Register New Bot</option>
+                        <option value="edit-bal">Edit Balance</option>
                         <option value="chat">Send New Chat</option>
                         <option value="dis">Disable Bot</option>
                         <option value="del">Delete User</option>
                       </select>
                     </form>
-                    
-                      <form id="connect" action="" class="text-center" style="display:none">
-                        <h4>Register New Bot</h4>
-                        <input class='form-control mb-1' id="name" type="text" placeholder="Bot Name" autocomplete="" />
-                        <input class='form-control mb-1' id="min" type="text" placeholder="Minimum Amount" autocomplete="" />
-                        <input class='form-control mb-1' id="max" type="text" placeholder="Maximum Amount" autocomplete="" />
-                        <input class='form-control mb-1' id="cmax" type="text" placeholder="Minimum Payout" autocomplete="" />
-                        <input class='form-control mb-1' id="cmin" type="text" placeholder="Maximum Payout" autocomplete="" />
-                        <button class='btn btn-success'>Submit New Bot</button>
-                      </form>
-                    
-                      <form id="chat" action="" class="text-center" style="display:none">
-                        <h4>Send New Chat</h4>
-                        <input class='form-control mb-1' id="namec" type="text" placeholder="UserName" autocomplete="" />
-                        <input class='form-control mb-1' id="room" type="text" placeholder="Room Code" value="us" />
-                        <textarea class='form-control mb-1' id='message' rows='5' cols="10" placeholder="Message"></textarea>
-                        <button class='btn btn-success'>Submit New Chat</button>
-                      </form>
-                      <form id="dis" action="" class="text-center">
-                        <h4>Disable Bot</h4>
-                        <input class='form-control mb-1' id="idb" type="text" placeholder="Bot Name" value="" autocomplete="" />
-                        <button class='btn btn-success mb-4'>Disable Bot</button>
-                      </form>
-                    
-                      <form id="del" action="" class="text-center" style="display:none">
-                        <h4>Delete User</h4>
-                        <input class='form-control mb-1' id="idd" type="text" placeholder="Username" value="" autocomplete="" />
-                        <button class='btn btn-success'>Delete User</button>
-                    
+                    <form id="edit-bal" action="" class="text-center" style="display:none">
+                      <h4>Edit Balance</h4>
+                      <input class='form-control mb-1' id="targetid" type="text" placeholder="Target id" value=""
+                        autocomplete="" />
+                      <input class='form-control mb-1' id="newcash" type="text" placeholder="New Cash" value=""
+                        autocomplete="" />
+                      <button class='btn btn-success'>Edit Balance</button>
                     </form>
 
-                      </div>
-              </div>
-              <div class="card-body  justify-content-center">  
-                  <button id="bust" class="btn btn-danger justify-content-center">Force Bust Game !</button>
+                    <form id="connect" action="" class="text-center" style="display:none">
+                      <h4>Register New Bot</h4>
+                      <input class='form-control mb-1' id="name" type="text" placeholder="Bot Name" autocomplete="" />
+                      <input class='form-control mb-1' id="min" type="text" placeholder="Minimum Amount"
+                        autocomplete="" />
+                      <input class='form-control mb-1' id="max" type="text" placeholder="Maximum Amount"
+                        autocomplete="" />
+                      <input class='form-control mb-1' id="cmax" type="text" placeholder="Minimum Payout"
+                        autocomplete="" />
+                      <input class='form-control mb-1' id="cmin" type="text" placeholder="Maximum Payout"
+                        autocomplete="" />
+                      <button class='btn btn-success'>Submit New Bot</button>
+                    </form>
+
+                    <form id="chat" action="" class="text-center" style="display:none">
+                      <h4>Send New Chat</h4>
+                      <input class='form-control mb-1' id="namec" type="text" placeholder="UserName" autocomplete="" />
+                      <input class='form-control mb-1' id="room" type="text" placeholder="Room Code" value="us" />
+                      <textarea class='form-control mb-1' id='message' rows='5' cols="10"
+                        placeholder="Message"></textarea>
+                      <button class='btn btn-success'>Submit New Chat</button>
+                    </form>
+                    <form id="dis" action="" class="text-center">
+                      <h4>Disable Bot</h4>
+                      <input class='form-control mb-1' id="idb" type="text" placeholder="Bot Name" value=""
+                        autocomplete="" />
+                      <button class='btn btn-success mb-4'>Disable Bot</button>
+                    </form>
+
+                    <form id="del" action="" class="text-center" style="display:none">
+                      <h4>Delete User</h4>
+                      <input class='form-control mb-1' id="idd" type="text" placeholder="Username" value=""
+                        autocomplete="" />
+                      <button class='btn btn-success'>Delete User</button>
+
+                    </form>
+
                   </div>
+                </div>
+                <div class="card-body  justify-content-center">
+                  <button id="bust" class="btn btn-danger justify-content-center">Force Bust Game !</button>
+                </div>
               </div>
-              
+
             </div>
-            
+
             <div class="col-xl-8 xl-100 box-col-12">
               <div class="card">
                 <div class="card-header no-border">
@@ -892,102 +906,112 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
   <!-- login js-->
   <!-- Plugin used-->
   <script>
-		$("#myselect").on("change", function () {
-			$("#" + $(this).val()).show().siblings().hide();
-			$('#form-shower').attr('style', 'display:block !important');
-		});
-	</script>
+    $("#myselect").on("change", function () {
+      $("#" + $(this).val()).show().siblings().hide();
+      $('#form-shower').attr('style', 'display:block !important');
+    });
+  </script>
 
-<script src="./socket.io.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.3.2/sha256.min.js'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-	<script src="./crypt.min.js"></script>
-  
-<script>
-  $(function () {
-    var socket = io.connect('wss://mgrun.io'); //Socket Address
-    var passphrase = 'node_modules/express/index.js'; // make sure this code is in your api files.
-    var crypter = Crypt(passphrase);
+  <script src="./socket.io.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.3.2/sha256.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <script src="./crypt.min.js"></script>
 
-    const key = "secret";
+  <script>
+    $(function () {
+      var socket = io.connect('wss://mgrun.io'); //Socket Address
+      var passphrase = 'node_modules/express/index.js'; // make sure this code is in your api files.
+      var crypter = Crypt(passphrase);
 
-    setTimeout(() => {
-      socket.emit('all_withdrawals');
-    }, 2000);
+      const key = "secret";
 
-    socket.on('all_withdrawals', function (data) {
-      data = crypter.decrypt(data)
-      console.log(data)
+      setTimeout(() => {
+        socket.emit('all_withdrawals');
+      }, 2000);
+
+      socket.on('all_withdrawals', function (data) {
+        data = crypter.decrypt(data)
+        console.log(data)
+      });
+
+      socket.on('disable_bot', function (data) {
+        alert('Bot Disabled!')
+      });
+
+      $('#bust').click(function () {
+        socket.emit('force_bust');
+        alert('Game Busted!')
+      });
+
+      $('#chat').submit(function () {
+        let data = {
+          command: 'fake_chat_' + key,
+          name: $('#namec').val(),
+          room: $('#room').val(),
+          message: $('#message').val()
+        };
+        socket.emit('message', crypter.encrypt(data));
+        alert('Message Sended!')
+        return false;
+      });
+
+      $('#connect').submit(function () {
+        let data = {
+          command: 'bot_register_' + key,
+          name: $('#name').val(),
+          min: $('#min').val(),
+          max: $('#max').val(),
+          cmax: parseFloat($('#cmax').val()) * 100,
+          cmin: parseFloat($('#cmin').val()) * 100
+        };
+        socket.emit('message', crypter.encrypt(data));
+        alert('succesfully Submited !')
+        return false;
+      });
+
+      $('#dis').submit(function () {
+        let data = {
+          command: 'disable_bot_' + key,
+          id: $('#idb').val()
+        };
+        socket.emit('message', crypter.encrypt(data));
+        return false;
+      });
+
+      $('#edit-bal').submit(function () {
+        let data = {
+          command: 'edit_balance_' + key,
+          target: $('#targetid').val(),
+          cash: parseInt($('#newcash').val())
+        };
+        socket.emit('message', crypter.encrypt(data));
+        alert("Balnce edit started2");
+        return false;
+      });
+
+
+      $('#del').submit(function () {
+        let data = {
+          command: 'delete_user_' + key,
+          id: $('#idd').val()
+        };
+        socket.emit('message', crypter.encrypt(data));
+        return false;
+      });
     });
 
-    socket.on('disable_bot', function (data) {
-      alert('Bot Disabled!')
-    });
-
-    $('#bust').click(function () {
-      socket.emit('force_bust');
-      alert('Game Busted!')
-    });
-
-    $('#chat').submit(function () {
-      let data = {
-        command: 'fake_chat_' + key,
-        name: $('#namec').val(),
-        room: $('#room').val(),
-        message: $('#message').val()
-      };
-      socket.emit('message', crypter.encrypt(data));
-      alert('Message Sended!')
-      return false;
-    });
-
-    $('#connect').submit(function () {
-      let data = {
-        command: 'bot_register_' + key,
-        name: $('#name').val(),
-        min: $('#min').val(),
-        max: $('#max').val(),
-        cmax: parseFloat($('#cmax').val()) * 100,
-        cmin: parseFloat($('#cmin').val()) * 100
-      };
-      socket.emit('message', crypter.encrypt(data));
-      alert('succesfully Submited !')
-      return false;
-    });
-
-    $('#dis').submit(function () {
-      let data = {
-        command: 'disable_bot_' + key,
-        id: $('#idb').val()
-      };
-      socket.emit('message', crypter.encrypt(data));
-      return false;
-    });
-
-    $('#del').submit(function () {
-      let data = {
-        command: 'delete_user_' + key,
-        id: $('#idd').val()
-      };
-      socket.emit('message', crypter.encrypt(data));
-      return false;
-    });
-  });
-
-  function createUserList(data) {
-    var i = 0;
-    for (var i in data) {
-      let user = data[i];
-      let name = user.username;
-      $('#users').append(name);
+    function createUserList(data) {
+      var i = 0;
+      for (var i in data) {
+        let user = data[i];
+        let name = user.username;
+        $('#users').append(name);
+      }
     }
-  }
 
-</script>
+  </script>
 
 </body>
-
-<!-- Mirrored from admin.pixelstrap.com/poco/ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Feb 2021 15:01:21 GMT -->
 
 </html>

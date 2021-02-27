@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
-    header("Location: ../login.php");
-    die();
+if (empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == '') {
+  header("Location: ../login.php");
+  die();
 }
 ?>
 <!DOCTYPE html>
@@ -12,18 +12,11 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Poco admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-  <meta name="keywords"
-    content="admin template, Poco admin template, dashboard template, flat admin template, responsive admin template, web app">
-  <meta name="author" content="pixelstrap">
   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
   <title>Poco - Premium Admin Template</title>
   <!-- Google font-->
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <!-- Font Awesome-->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
@@ -54,11 +47,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
 
 <body>
   <!-- Loader starts-->
-  <div class="loader-wrapper">
-    <div class="typewriter">
-      <h1>New Era Admin Loading..</h1>
-    </div>
-  </div>
+
   <!-- Loader ends-->
   <!-- page-wrapper Start-->
   <div class="page-wrapper">
@@ -66,12 +55,11 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
     <div class="page-main-header">
       <div class="main-header-right">
         <div class="main-header-left text-center">
-          <div class="logo-wrapper"><a href="index.html"><img src="assets/images/logo/logo.png" alt=""></a></div>
+          <div class="logo-wrapper"><a href="index.php"><img src="assets/images/logo/logo.png" alt=""></a></div>
         </div>
         <div class="mobile-sidebar">
           <div class="media-body text-right switch-sm">
-            <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle"
-                data-feather="align-center"></i></label>
+            <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle" data-feather="align-center"></i></label>
           </div>
         </div>
         <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"> </i></div>
@@ -82,21 +70,16 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 <div class="form-group">
                   <div class="Typeahead Typeahead--twitterUsers">
                     <div class="u-posRelative">
-                      <input class="Typeahead-input form-control-plaintext" id="demo-input" type="text" name="q"
-                        placeholder="Search Your Product...">
-                      <div class="spinner-border Typeahead-spinner" role="status"><span
-                          class="sr-only">Loading...</span></div><span class="d-sm-none mobile-search"><i
-                          data-feather="search"></i></span>
+                      <input class="Typeahead-input form-control-plaintext" id="demo-input" type="text" name="q" placeholder="Search Your Product...">
+                      <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span></div><span class="d-sm-none mobile-search"><i data-feather="search"></i></span>
                     </div>
                     <div class="Typeahead-menu"></div>
                   </div>
                 </div>
               </form>
             </li>
-            <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
-                  data-feather="maximize"></i></a></li>
-            <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning"
-                src="assets/images/dashboard/bookmark.png" alt="">
+            <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
+            <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning" src="assets/images/dashboard/bookmark.png" alt="">
               <div class="onhover-show-div bookmark-flip">
                 <div class="flip-card">
                   <div class="flip-card-inner">
@@ -136,26 +119,19 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 </div>
               </div>
             </li>
-            <li class="onhover-dropdown"><img class="img-fluid img-shadow-secondary"
-                src="assets/images/dashboard/like.png" alt="">
+            <li class="onhover-dropdown"><img class="img-fluid img-shadow-secondary" src="assets/images/dashboard/like.png" alt="">
               <ul class="onhover-show-div droplet-dropdown">
                 <li class="gradient-primary text-center">
                   <h5 class="f-w-700">Grid Dashboard</h5><span>Easy Grid inside dropdown</span>
                 </li>
                 <li>
                   <div class="row">
-                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="file-text"></i><span
-                        class="d-block">Content</span></div>
-                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="activity"></i><span
-                        class="d-block">Activity</span></div>
-                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="users"></i><span
-                        class="d-block">Contacts</span></div>
-                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="clipboard"></i><span
-                        class="d-block">Reports</span></div>
-                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="anchor"></i><span
-                        class="d-block">Automation</span></div>
-                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="settings"></i><span
-                        class="d-block">Settings</span></div>
+                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="file-text"></i><span class="d-block">Content</span></div>
+                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="activity"></i><span class="d-block">Activity</span></div>
+                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="users"></i><span class="d-block">Contacts</span></div>
+                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="clipboard"></i><span class="d-block">Reports</span></div>
+                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="anchor"></i><span class="d-block">Automation</span></div>
+                    <div class="col-sm-4 col-6 droplet-main"><i data-feather="settings"></i><span class="d-block">Settings</span></div>
                   </div>
                 </li>
                 <li class="text-center">
@@ -163,8 +139,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 </li>
               </ul>
             </li>
-            <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning"
-                src="assets/images/dashboard/notification.png" alt="">
+            <li class="onhover-dropdown"><img class="img-fluid img-shadow-warning" src="assets/images/dashboard/notification.png" alt="">
               <ul class="onhover-show-div notification-dropdown">
                 <li class="gradient-primary">
                   <h5 class="f-w-700">Notifications</h5><span>You have 6 unread messages</span>
@@ -191,33 +166,27 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 <li class="bg-light txt-dark"><a href="#">All </a> notification</li>
               </ul>
             </li>
-            <li><a class="right_side_toggle" href="#"><img class="img-fluid img-shadow-success"
-                  src="assets/images/dashboard/chat.png" alt=""></a></li>
-            <li class="onhover-dropdown"> <span class="media user-header"><img class="img-fluid"
-                  src="assets/images/dashboard/user.png" alt=""></span>
+            <li><a class="right_side_toggle" href="#"><img class="img-fluid img-shadow-success" src="assets/images/dashboard/chat.png" alt=""></a></li>
+            <li class="onhover-dropdown"> <span class="media user-header"><img class="img-fluid" src="assets/images/dashboard/user.png" alt=""></span>
               <ul class="onhover-show-div profile-dropdown">
                 <li class="gradient-primary">
-                  <h5 class="f-w-600 mb-0">Elana Saint</h5><span>Web Designer</span>
+                  <h5 class="f-w-600 mb-0">Shubham</h5><span>Admin</span>
                 </li>
-                <li><i data-feather="user"> </i>Profile</li>
-                <li><i data-feather="message-square"> </i>Inbox</li>
-                <li><i data-feather="file-text"> </i>Taskboard</li>
-                <li><i data-feather="settings"> </i>Settings </li>
+                <li><a href="../logout.php"><i data-feather="log-out"> </i> Logout</a></li>
               </ul>
             </li>
           </ul>
           <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
         </div>
         <script id="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
+          <div class="ProfileCard u-cf">                        
             <div class="ProfileCard-avatar"><i class="pe-7s-home"></i></div>
             <div class="ProfileCard-details">
             <div class="ProfileCard-realName">{{name}}</div>
             </div>
             </div>
           </script>
-        <script id="empty-template"
-          type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
+        <script id="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
       </div>
     </div>
     <!-- Page Header Ends                              -->
@@ -231,15 +200,12 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 <!--img(src='assets/images/menu/home.png' alt='')--><i class="pe-7s-home"></i><span>General </span>
               </a>
               <ul class="iconbar-mainmenu custom-scrollbar">
-                <li class="iconbar-header">Dashboard</li>
-                <li><a href="index.html">Default</a></li>
+                <li class="iconbar-header"><a href="index.php">Default</a></li>
                 <li><a href="dashboard-crypto.html">Crypto</a></li>
                 <li><a href="dashboard-ecommerce.html">Ecommerce</a></li>
                 <li class="iconbar-header sub-header">Widgets</li>
                 <li><a href="general-widget.html">General widget</a></li>
                 <li><a href="chart-widget.html">Chart widget</a></li>
-                <li class="iconbar-header sub-header">starter-kit</li>
-                <li><a href="https://admin.pixelstrap.com/poco/starter-kit/index.html">starter-kit </a></li>
               </ul>
             </li>
             <li><a class="bar-icons" href="javascript:void(0)"><i class="pe-7s-portfolio"></i><span>UI Kits</span></a>
@@ -294,8 +260,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 <li><a href="ionic-icon.html">Ionic icon</a></li>
               </ul>
             </li>
-            <li><span class="badge badge-pill badge-danger">Hot</span><a class="bar-icons" href="javascript:void(0)"><i
-                  class="pe-7s-diamond"></i><span>Perk UI</span></a>
+            <li><span class="badge badge-pill badge-danger">Hot</span><a class="bar-icons" href="javascript:void(0)"><i class="pe-7s-diamond"></i><span>Perk UI</span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                 <li class="iconbar-header">Animation</li>
                 <li><a href="animate.html">Animate</a></li>
@@ -423,8 +388,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                 <li><a href="learning-detailed.html">Detailed Course </a></li>
               </ul>
             </li>
-            <li><span class="badge badge-pill badge-primary">New</span><a class="bar-icons" href="javascript:void(0)"><i
-                  class="pe-7s-gift"></i><span>Apps</span></a>
+            <li><span class="badge badge-pill badge-primary">New</span><a class="bar-icons" href="javascript:void(0)"><i class="pe-7s-gift"></i><span>Apps</span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                 <li class="iconbar-header">User</li>
                 <li><a href="user-profile.html">Users Profile</a></li>
@@ -558,7 +522,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
               </div>
               <div class="col-lg-6 breadcrumb-right">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html"><i class="pe-7s-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="index.php"><i class="pe-7s-home"></i></a></li>
                   <li class="breadcrumb-item">Dashboard</li>
                   <li class="breadcrumb-item active">Default </li>
                 </ol>
@@ -585,66 +549,73 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                   <div class="card-header-right">
                     <ul class="list-unstyled card-option">
                       <li><i class="icofont icofont-gear fa fa-spin font-primary"></i></li>
-                      <li><i class="view-html fa fa-code font-primary"></i></li>
                       <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
                       <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
                       <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                      <li><i class="icofont icofont-error close-card font-primary"></i></li>
                     </ul>
                   </div>
                 </div>
                 <div class="card-body pt-0">
                   <div class="activity-table table-responsive recent-table">
-                  
+
                     <form id="form-shower">
                       <select id="myselect">
                         <option value="" selected="selected"></option>
                         <option value="connect">Register New Bot</option>
                         <option value="chat">Send New Chat</option>
+                        <option value="edit-bal">Edit Balance</option>
                         <option value="dis">Disable Bot</option>
                         <option value="del">Delete User</option>
                       </select>
                     </form>
-                    
-                      <form id="connect" action="" class="text-center" style="display:none">
-                        <h4>Register New Bot</h4>
-                        <input class='form-control mb-1' id="name" type="text" placeholder="Bot Name" autocomplete="" />
-                        <input class='form-control mb-1' id="min" type="text" placeholder="Minimum Amount" autocomplete="" />
-                        <input class='form-control mb-1' id="max" type="text" placeholder="Maximum Amount" autocomplete="" />
-                        <input class='form-control mb-1' id="cmax" type="text" placeholder="Minimum Payout" autocomplete="" />
-                        <input class='form-control mb-1' id="cmin" type="text" placeholder="Maximum Payout" autocomplete="" />
-                        <button class='btn btn-success'>Submit New Bot</button>
-                      </form>
-                    
-                      <form id="chat" action="" class="text-center" style="display:none">
-                        <h4>Send New Chat</h4>
-                        <input class='form-control mb-1' id="namec" type="text" placeholder="UserName" autocomplete="" />
-                        <input class='form-control mb-1' id="room" type="text" placeholder="Room Code" value="us" />
-                        <textarea class='form-control mb-1' id='message' rows='5' cols="10" placeholder="Message"></textarea>
-                        <button class='btn btn-success'>Submit New Chat</button>
-                      </form>
-                      <form id="dis" action="" class="text-center">
-                        <h4>Disable Bot</h4>
-                        <input class='form-control mb-1' id="idb" type="text" placeholder="Bot Name" value="" autocomplete="" />
-                        <button class='btn btn-success mb-4'>Disable Bot</button>
-                      </form>
-                    
-                      <form id="del" action="" class="text-center" style="display:none">
-                        <h4>Delete User</h4>
-                        <input class='form-control mb-1' id="idd" type="text" placeholder="Username" value="" autocomplete="" />
-                        <button class='btn btn-success'>Delete User</button>
-                    
+
+                    <form id="connect" action="" class="text-center" style="display:none">
+                      <h4>Register New Bot</h4>
+                      <input class='form-control mb-1' id="name" type="text" placeholder="Bot Name" autocomplete="" />
+                      <input class='form-control mb-1' id="min" type="text" placeholder="Minimum Amount" autocomplete="" />
+                      <input class='form-control mb-1' id="max" type="text" placeholder="Maximum Amount" autocomplete="" />
+                      <input class='form-control mb-1' id="cmax" type="text" placeholder="Minimum Payout" autocomplete="" />
+                      <input class='form-control mb-1' id="cmin" type="text" placeholder="Maximum Payout" autocomplete="" />
+                      <button class='btn btn-success'>Submit New Bot</button>
                     </form>
 
-                      </div>
-              </div>
-              <div class="card-body  justify-content-center">  
-                  <button id="bust" class="btn btn-danger justify-content-center">Force Bust Game !</button>
+                    <form id="chat" action="" class="text-center" style="display:none">
+                      <h4>Send New Chat</h4>
+                      <input class='form-control mb-1' id="namec" type="text" placeholder="UserName" autocomplete="" />
+                      <input class='form-control mb-1' id="room" type="text" placeholder="Room Code" value="us" />
+                      <textarea class='form-control mb-1' id='message' rows='5' cols="10" placeholder="Message"></textarea>
+                      <button class='btn btn-success'>Submit New Chat</button>
+                    </form>
+                    <form id="dis" action="" class="text-center">
+                      <h4>Disable Bot</h4>
+                      <input class='form-control mb-1' id="idb" type="text" placeholder="Bot Name" value="" autocomplete="" />
+                      <button class='btn btn-success mb-4'>Disable Bot</button>
+                    </form>
+
+                    <form id="del" action="" class="text-center" style="display:none">
+                      <h4>Delete User</h4>
+                      <input class='form-control mb-1' id="idd" type="text" placeholder="Username" value="" autocomplete="" />
+                      <button class='btn btn-success'>Delete User</button>
+
+                    </form>
+
+                    <form id="edit-bal" action="" class="text-center" style="display:none">
+                      <h4>Edit Balance</h4>
+                      <input class='form-control mb-1' id="targetid" type="text" placeholder="Target id" value="" autocomplete="" />
+                      <input class='form-control mb-1' id="newcash" type="text" placeholder="New Cash" value="" autocomplete="" />
+                      <button class='btn btn-success'>Edit Balance</button>
+                    </form>
+
+
                   </div>
+                </div>
+                <div class="card-body  justify-content-center">
+                  <button id="bust" class="btn btn-danger justify-content-center">Force Bust Game !</button>
+                </div>
               </div>
-              
+
             </div>
-            
+
             <div class="col-xl-8 xl-100 box-col-12">
               <div class="card">
                 <div class="card-header no-border">
@@ -660,11 +631,9 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                   <div class="card-header-right">
                     <ul class="list-unstyled card-option">
                       <li><i class="icofont icofont-gear fa fa-spin font-primary"></i></li>
-                      <li><i class="view-html fa fa-code font-primary"></i></li>
                       <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
                       <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
                       <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                      <li><i class="icofont icofont-error close-card font-primary"></i></li>
                     </ul>
                   </div>
                 </div>
@@ -674,8 +643,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                       <tbody>
                         <tr>
                           <td>
-                            <div class="recent-images"><img class="img-fluid"
-                                src="assets/images/dashboard/recent-user-1.png" alt=""></div>
+                            <div class="recent-images"><img class="img-fluid" src="assets/images/dashboard/recent-user-1.png" alt=""></div>
                           </td>
                           <td>
                             <h5 class="default-text mb-0 f-w-700 f-18">Nick Stone</h5>
@@ -690,8 +658,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                         </tr>
                         <tr>
                           <td>
-                            <div class="recent-images-primary"><img class="img-fluid"
-                                src="assets/images/dashboard/recent-user-2.png" alt=""></div>
+                            <div class="recent-images-primary"><img class="img-fluid" src="assets/images/dashboard/recent-user-2.png" alt=""></div>
                           </td>
                           <td>
                             <h5 class="font-primary mb-0 f-w-700 f-18">Milano Esco</h5>
@@ -706,8 +673,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                         </tr>
                         <tr>
                           <td>
-                            <div class="recent-images-secondary"><img class="img-fluid"
-                                src="assets/images/dashboard/recent-user-3.png" alt=""></div>
+                            <div class="recent-images-secondary"><img class="img-fluid" src="assets/images/dashboard/recent-user-3.png" alt=""></div>
                           </td>
                           <td>
                             <h5 class="font-secondary mb-0 f-w-700 f-18">Charlie Pol</h5>
@@ -722,8 +688,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                         </tr>
                         <tr>
                           <td>
-                            <div class="recent-images-warning"><img class="img-fluid"
-                                src="assets/images/dashboard/recent-user-4.png" alt=""></div>
+                            <div class="recent-images-warning"><img class="img-fluid" src="assets/images/dashboard/recent-user-4.png" alt=""></div>
                           </td>
                           <td>
                             <h5 class="font-warning mb-0 f-w-700 f-18">Jordi Esol</h5>
@@ -740,8 +705,7 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
                     </table>
                   </div>
                   <div class="code-box-copy">
-                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head21"
-                      title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head21" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
                     <pre><code class="language-html" id="example-head21"><!-- Cod Box Copy begin -->
                         <div class="card-body pt-0">
                         <div class="activity-table table-responsive recent-table">
@@ -892,102 +856,110 @@ if(empty($_SESSION['userLogin']) || $_SESSION['userLogin'] == ''){
   <!-- login js-->
   <!-- Plugin used-->
   <script>
-		$("#myselect").on("change", function () {
-			$("#" + $(this).val()).show().siblings().hide();
-			$('#form-shower').attr('style', 'display:block !important');
-		});
-	</script>
+    $("#myselect").on("change", function() {
+      $("#" + $(this).val()).show().siblings().hide();
+      $('#form-shower').attr('style', 'display:block !important');
+    });
+  </script>
 
-<script src="./socket.io.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.3.2/sha256.min.js'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-	<script src="./crypt.min.js"></script>
-  
-<script>
-  $(function () {
-    var socket = io.connect('wss://mgrun.io'); //Socket Address
-    var passphrase = 'node_modules/express/index.js'; // make sure this code is in your api files.
-    var crypter = Crypt(passphrase);
+  <script src="./socket.io.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.3.2/sha256.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <script src="./crypt.min.js"></script>
 
-    const key = "secret";
+  <script>
+    $(function() {
+      var socket = io.connect('wss://mgrun.io'); //Socket Address
+      var passphrase = 'node_modules/express/index.js'; // make sure this code is in your api files.
+      var crypter = Crypt(passphrase);
 
-    setTimeout(() => {
-      socket.emit('all_withdrawals');
-    }, 2000);
+      const key = "secret";
 
-    socket.on('all_withdrawals', function (data) {
-      data = crypter.decrypt(data)
-      console.log(data)
+      setTimeout(() => {
+        socket.emit('all_withdrawals');
+      }, 2000);
+
+      socket.on('all_withdrawals', function(data) {
+        data = crypter.decrypt(data)
+        console.log(data)
+      });
+
+      socket.on('disable_bot', function(data) {
+        alert('Bot Disabled!')
+      });
+
+      $('#bust').click(function() {
+        socket.emit('force_bust');
+        alert('Game Busted!')
+      });
+
+      $('#chat').submit(function() {
+        let data = {
+          command: 'fake_chat_' + key,
+          name: $('#namec').val(),
+          room: $('#room').val(),
+          message: $('#message').val()
+        };
+        socket.emit('message', crypter.encrypt(data));
+        alert('Message Sended!')
+        return false;
+      });
+
+      $('#connect').submit(function() {
+        let data = {
+          command: 'bot_register_' + key,
+          name: $('#name').val(),
+          min: $('#min').val(),
+          max: $('#max').val(),
+          cmax: parseFloat($('#cmax').val()) * 100,
+          cmin: parseFloat($('#cmin').val()) * 100
+        };
+        socket.emit('message', crypter.encrypt(data));
+        alert('succesfully Submited !')
+        return false;
+      });
+
+      $('#dis').submit(function() {
+        let data = {
+          command: 'disable_bot_' + key,
+          id: $('#idb').val()
+        };
+        socket.emit('message', crypter.encrypt(data));
+        return false;
+      });
+
+      $('#edit-bal').submit(function() {
+        let data = {
+          command: 'edit_balance_' + key,
+          target: $('#targetid').val(),
+          cash: parseInt($('#newcash').val())
+        };
+        socket.emit('message', crypter.encrypt(data));
+        alert("Balnce edit started2");
+        return false;
+      });
+
+      $('#del').submit(function() {
+        let data = {
+          command: 'delete_user_' + key,
+          id: $('#idd').val()
+        };
+        socket.emit('message', crypter.encrypt(data));
+        return false;
+      });
     });
 
-    socket.on('disable_bot', function (data) {
-      alert('Bot Disabled!')
-    });
-
-    $('#bust').click(function () {
-      socket.emit('force_bust');
-      alert('Game Busted!')
-    });
-
-    $('#chat').submit(function () {
-      let data = {
-        command: 'fake_chat_' + key,
-        name: $('#namec').val(),
-        room: $('#room').val(),
-        message: $('#message').val()
-      };
-      socket.emit('message', crypter.encrypt(data));
-      alert('Message Sended!')
-      return false;
-    });
-
-    $('#connect').submit(function () {
-      let data = {
-        command: 'bot_register_' + key,
-        name: $('#name').val(),
-        min: $('#min').val(),
-        max: $('#max').val(),
-        cmax: parseFloat($('#cmax').val()) * 100,
-        cmin: parseFloat($('#cmin').val()) * 100
-      };
-      socket.emit('message', crypter.encrypt(data));
-      alert('succesfully Submited !')
-      return false;
-    });
-
-    $('#dis').submit(function () {
-      let data = {
-        command: 'disable_bot_' + key,
-        id: $('#idb').val()
-      };
-      socket.emit('message', crypter.encrypt(data));
-      return false;
-    });
-
-    $('#del').submit(function () {
-      let data = {
-        command: 'delete_user_' + key,
-        id: $('#idd').val()
-      };
-      socket.emit('message', crypter.encrypt(data));
-      return false;
-    });
-  });
-
-  function createUserList(data) {
-    var i = 0;
-    for (var i in data) {
-      let user = data[i];
-      let name = user.username;
-      $('#users').append(name);
+    function createUserList(data) {
+      var i = 0;
+      for (var i in data) {
+        let user = data[i];
+        let name = user.username;
+        $('#users').append(name);
+      }
     }
-  }
-
-</script>
+  </script>
 
 </body>
-
-<!-- Mirrored from admin.pixelstrap.com/poco/ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Feb 2021 15:01:21 GMT -->
 
 </html>
